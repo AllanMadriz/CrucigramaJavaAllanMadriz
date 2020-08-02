@@ -1,8 +1,6 @@
 
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(®‚‹÷8õÆùá².
-N
-java:S1612",Replace this lambda with a method reference.(¯Š…Ùşÿÿÿÿ8à»…â².
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ºº¦øÿÿÿÿ
 \
 java:S1118":Add a private constructor to hide the implicit public one.(Á„¬ëıÿÿÿÿ8õÆùá².
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(š‡«8õÆùá².
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ºº¦øÿÿÿÿ
+]	java:S125"<This block of commented-out lines of code should be removed.(¨§ñøÿÿÿÿ8õÌ•¹.
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(š‡«8õÆùá².

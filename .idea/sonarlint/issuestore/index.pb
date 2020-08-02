@@ -13,3 +13,17 @@ E
 src/Avance/Pista.java,7\4\742da5134f778390210c2f799abce7445d4f7714
 ;
 Pistas.json,6\4\6417162e83115c64cd271e7a417ef0e65e1cc431
+B
+AvanceProyecto.iml,8\1\8134fb37651c97adf9ac7a556d7fc4c4c1c622fd
+T
+$.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1cba
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+S
+#.idea/libraries/json_simple_1_1.xml,d\6\d6e70afc7b601c396a1c1d3a1e21f66b87582d1a
+L
+src/Avance/Presentacion.form,0\3\038725d314985864fe7637487d9f78a8476c148d
+L
+.idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
+L
+src/Avance/Presentacion.java,1\6\16aad572f1f080f6ab8351be703d596fd96221e6

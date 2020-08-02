@@ -10,12 +10,11 @@ import org.json.simple.parser.JSONParser;
 
 class JsonUtil {
 
-    static void escribirJsonSimple(String nombreArchivo, List<JSONObject> objsJson)throws Exception {
-
+   /* static void escribirJsonSimple(String nombreArchivo, List<JSONObject> objsJson)throws Exception {
         JSONArray arrayJson = new JSONArray();
         objsJson.forEach(obj -> arrayJson.add(obj));
         Files.write(Paths.get(nombreArchivo), arrayJson.toString().getBytes());
-    }
+    }*/
 
     static Object leerJsonSimple(String nombreArchivo) throws Exception {
         FileReader lector = new FileReader(nombreArchivo);

@@ -7,8 +7,9 @@ import java.util.List;
 
 public class Crucigrama {
     private static String FILE_NAME = "Casillas.json";
+    private static String PISTAS_NAME = "Pistas.json";
 
-    public  List<Casilla> sacarCasillas() throws Exception {
+    public List<Casilla> sacarCasillas() throws Exception {
         List<JSONObject> jsonObjects = (List<JSONObject>) JsonUtil.leerJsonSimple(FILE_NAME);
         List<Casilla> listCrucigrama = new ArrayList<>();
 
@@ -26,7 +27,7 @@ public class Crucigrama {
     public String[][] obtenerMatriz(List<Casilla> casillas) {
         final String[][][] matriz = {new String[7][7]};
         casillas.forEach(casilla ->
-            matriz[0] = llenarCasilla(matriz[0], casilla)
+                matriz[0] = llenarCasilla(matriz[0], casilla)
         );
         return matriz[0];
     }
@@ -48,18 +49,18 @@ public class Crucigrama {
         return matriz[0];
     }
 
-    private static String[][]matrizVacia(String[][]matriz, Casilla casilla){
-        if (casilla.getActivada()){
+    private static String[][] matrizVacia(String[][] matriz, Casilla casilla) {
+        if (casilla.getActivada()) {
             matriz[casilla.getFila()][casilla.getColumna()] = " ";
-        }else {
+        } else {
             matriz[casilla.getFila()][casilla.getColumna()] = "*";
         }
 
         return matriz;
     }
 
-    public  List<Pista> lasPistas() throws Exception {
-        List<JSONObject> jsonObjects = (List<JSONObject>) JsonUtil.leerJsonSimple("Pistas.json");
+    public List<Pista> sacarPistas() throws Exception {
+        List<JSONObject> jsonObjects = (List<JSONObject>) JsonUtil.leerJsonSimple(PISTAS_NAME);
         List<Pista> listPistas = new ArrayList<>();
 
         jsonObjects.forEach(it -> listPistas.add(
