@@ -24,7 +24,7 @@ public class Presentacion {
         frame.setContentPane(new Presentacion().Panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(600, 600);
+        frame.setSize(750, 650);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
@@ -32,11 +32,11 @@ public class Presentacion {
     public Presentacion() throws Exception {
 
         Panel.setLayout(null);
-        btnSalir.setBounds(650, 475, 100, 50);
-        btnValidar.setBounds(650, 400, 100, 50);
-        btnAyuda.setBounds(650, 325, 100, 50);
-        btnFinalizar.setBounds(650, 250, 100, 50);
-        btnRemover.setBounds(650, 175, 100, 50);
+        btnSalir.setBounds(525, 360, 150, 50);
+        btnValidar.setBounds(525, 290, 150, 50);
+        btnAyuda.setBounds(525, 220, 150, 50);
+        btnFinalizar.setBounds(525, 150, 150, 50);
+        btnRemover.setBounds(525, 70, 150, 50);
         btnRemover.setEnabled(false);
 
         var crucigrama = new Crucigrama();
@@ -139,7 +139,7 @@ public class Presentacion {
         Vertical.setBackground(Color.LIGHT_GRAY);
         Vertical.setVisible(true);
         Vertical.setOpaque(true);
-        Vertical.setBounds(70, 600, 650, 125);
+        Vertical.setBounds(40, 450, 650, 125);
 
         btnSalir.addActionListener(new ActionListener() {
             @Override
@@ -180,14 +180,12 @@ public class Presentacion {
         btnAyuda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //int ayudas = 0;
-                // JOptionPane.showMessageDialog(null, "Te quedan solo " + ayudas + " ayudas!!");
                 Random random = new Random();
                 int filaRandom = 0;
                 int columnaRandom = 0;
                 do {
-                     filaRandom = random.nextInt(matrizResuelta.length);
-                     columnaRandom = random.nextInt(matrizResuelta.length);
+                    filaRandom = random.nextInt(matrizResuelta.length);
+                    columnaRandom = random.nextInt(matrizResuelta.length);
                     System.out.println(filaRandom);
                     System.out.println(columnaRandom);
                     System.out.println(elCrucigrama[filaRandom][columnaRandom].getText().trim().equals(""));
