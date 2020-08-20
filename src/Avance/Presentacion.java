@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
+import java.util.Calendar;
 
+public class Presentacion implements Runnable {
 
-public class Presentacion {
     private JPanel Panel;
     private JTextArea Vertical;
     private JButton btnSalir;
@@ -15,22 +15,29 @@ public class Presentacion {
     private JButton btnAyuda;
     private JButton btnFinalizar;
     private JButton btnRemover;
+    private JLabel lblCronometro;
+    private long inicio = 0;
 
     final int tamanio = 7;
     JButton[][] elCrucigrama;
 
     public static void main(String[] args) throws Exception {
+
+        Presentacion presentacion = new Presentacion();
+        presentacion.init();
+
+    }
+
+    public Presentacion() throws Exception {
+
         JFrame frame = new JFrame("Presentacion");
-        frame.setContentPane(new Presentacion().Panel);
+        frame.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/snorlax.png")).getImage());
+        frame.setContentPane(Panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setSize(750, 650);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-    }
-
-    public Presentacion() throws Exception {
-
         Panel.setLayout(null);
         btnSalir.setBounds(525, 360, 150, 50);
         btnValidar.setBounds(525, 290, 150, 50);
@@ -38,6 +45,8 @@ public class Presentacion {
         btnFinalizar.setBounds(525, 150, 150, 50);
         btnRemover.setBounds(525, 70, 150, 50);
         btnRemover.setEnabled(false);
+        lblCronometro.setBounds(230, 10, 100, 50);
+
 
         var crucigrama = new Crucigrama();
         var casa = crucigrama.sacarCasillas();
@@ -48,12 +57,14 @@ public class Presentacion {
 
 
         for (int fila = 0; fila < tamanio; fila++) {
+
             for (int columna = 0; columna < tamanio; columna++) {
 
                 elCrucigrama[fila][columna] = new JButton();
                 elCrucigrama[fila][columna].setBackground(Color.WHITE);
 
                 if (matrizResuelta[fila][columna].equals("*")) {
+
                     elCrucigrama[fila][columna].setBackground(Color.BLACK);
                 }
 
@@ -61,6 +72,7 @@ public class Presentacion {
                 int columnaBoton = 0;
 
                 switch (fila) {
+
                     case 0:
                         columnaBoton = 70;
                         break;
@@ -85,6 +97,7 @@ public class Presentacion {
 
                 }
                 switch (columna) {
+
                     case 0:
                         filaBoton = 70;
                         break;
@@ -112,17 +125,25 @@ public class Presentacion {
                 elCrucigrama[fila][columna].setBounds(filaBoton, columnaBoton, 50, 50);
 
                 elCrucigrama[fila][columna].addActionListener(new ActionListener() {
+
                     @Override
                     public void actionPerformed(ActionEvent e) {
+
                         for (int fila = 0; fila < tamanio; fila++) {
+
                             for (int columna = 0; columna < tamanio; columna++) {
+
                                 if (e.getSource() == elCrucigrama[fila][columna]) {
+
                                     if (elCrucigrama[fila][columna].getBackground() == Color.WHITE) {
+
                                         if (elCrucigrama[fila][columna].getText().trim().equals("")) {
+
                                             char letra = JOptionPane.showInputDialog("Digite una letra:").toUpperCase().charAt(0);
                                             elCrucigrama[fila][columna].setText(letra + "");
                                         }
                                     } else if (elCrucigrama[fila][columna].getBackground() == Color.GREEN || elCrucigrama[fila][columna].getBackground() == Color.RED) {
+
                                         elCrucigrama[fila][columna].setText("");
                                         elCrucigrama[fila][columna].setBackground(Color.WHITE);
                                     }
@@ -135,7 +156,8 @@ public class Presentacion {
                 Panel.add(elCrucigrama[fila][columna]);
             }
         }
-        Vertical.setText(String.valueOf(idk).replaceAll("[-+,^]", ""));
+
+        idk.forEach(pista -> Vertical.setText(Vertical.getText() + pista.toString()));
         Vertical.setBackground(Color.LIGHT_GRAY);
         Vertical.setVisible(true);
         Vertical.setOpaque(true);
@@ -144,7 +166,8 @@ public class Presentacion {
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Integer salir = JOptionPane.showConfirmDialog(null, "¿Desea salir?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+                Integer salir = JOptionPane.showConfirmDialog(null, "¿Desea salir?", "", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (salir == JOptionPane.YES_OPTION) {
                     JOptionPane.showMessageDialog(null, "Hasta luego!!");
                     System.exit(0);
@@ -155,19 +178,37 @@ public class Presentacion {
         btnFinalizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int puntos = 0;
+                for (int i = 0; i < tamanio; i++) {
+                    for (int j = 0; j < tamanio; j++) {
+                        if (elCrucigrama[i][j].getText()!= "" && elCrucigrama[i][j].getBackground()==Color.GREEN){
+                            puntos++;
+                        }
+                    }
+                }
+                Integer finalizar = JOptionPane.showConfirmDialog(null, "¿Juego listo?", "", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (finalizar == JOptionPane.YES_OPTION) {
+                    JOptionPane.showMessageDialog(null, "Juan "+puntos);
 
+                }
             }
         });
 
         btnValidar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 for (int fila = 0; fila < tamanio; fila++) {
+
                     for (int columna = 0; columna < tamanio; columna++) {
+
                         if (elCrucigrama[fila][columna].getBackground() == Color.WHITE) {
+
                             if (elCrucigrama[fila][columna].getText().equals(matrizResuelta[fila][columna])) {
+
                                 elCrucigrama[fila][columna].setBackground(Color.GREEN);
                             } else {
+
                                 elCrucigrama[fila][columna].setBackground(Color.RED);
                             }
                         }
@@ -180,25 +221,41 @@ public class Presentacion {
         btnAyuda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Random random = new Random();
+
                 int filaRandom = 0;
                 int columnaRandom = 0;
-                do {
-                    filaRandom = random.nextInt(matrizResuelta.length);
-                    columnaRandom = random.nextInt(matrizResuelta.length);
-                    System.out.println(filaRandom);
-                    System.out.println(columnaRandom);
-                    System.out.println(elCrucigrama[filaRandom][columnaRandom].getText().trim().equals(""));
-                    System.out.println(elCrucigrama[filaRandom][columnaRandom].getBackground() == Color.WHITE);
-                } while (elCrucigrama[filaRandom][columnaRandom].getText().trim().equals("") && (elCrucigrama[filaRandom][columnaRandom].getBackground() == Color.WHITE));
-                if (elCrucigrama[filaRandom][columnaRandom].getBackground() == Color.WHITE) {
-                    if (elCrucigrama[filaRandom][columnaRandom].getText().trim().equals("")) {
-                        System.out.println(filaRandom);
-                        System.out.println(columnaRandom);
-                        elCrucigrama[filaRandom][columnaRandom].setText(matrizResuelta[filaRandom][columnaRandom]);
+                int ayudas = 0;
 
+                for (int fila = 0; fila < 7; fila++) {
+
+                    for (int columna = 0; columna < 7; columna++) {
+
+                        if (elCrucigrama[fila][columna].getText() != "") {
+
+                            ayudas++;
+                        }
                     }
                 }
+
+                filaRandom = (int) (Math.random() * 7);
+                columnaRandom = (int) (Math.random() * 7);
+
+                btnAyuda.setEnabled(false);
+                while (matrizResuelta[filaRandom][columnaRandom].trim().equals("*") || elCrucigrama[filaRandom][columnaRandom].getText() != "") {
+
+                    filaRandom = (int) (Math.random() * 7);
+                    columnaRandom = (int) (Math.random() * 7);
+                }
+                elCrucigrama[filaRandom][columnaRandom].setText(matrizResuelta[filaRandom][columnaRandom]);
+
+
+                if (ayudas < 2) {
+
+                    btnAyuda.setEnabled(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Ups intentos acabos!!");
+                }
+
             }
 
         });
@@ -209,9 +266,7 @@ public class Presentacion {
                 for (int fila = 0; fila < tamanio; fila++) {
                     for (int columna = 0; columna < tamanio; columna++) {
                         if (elCrucigrama[fila][columna].getBackground().equals(Color.RED)) {
-                            elCrucigrama[fila][columna].setText(null);
-                            elCrucigrama[fila][columna].setBackground(Color.WHITE);
-                        } else if (elCrucigrama[fila][columna].getBackground().equals(Color.GREEN)) {
+                            elCrucigrama[fila][columna].setText("");
                             elCrucigrama[fila][columna].setBackground(Color.WHITE);
                         }
                     }
@@ -222,4 +277,18 @@ public class Presentacion {
 
     }
 
+    public void init() {
+        inicio = System.currentTimeMillis();
+        Thread hilo = new Thread(this);
+        hilo.start();
+    }
+
+    @Override
+    public void run() {
+        Calendar calendario = Calendar.getInstance();
+        while (true) {
+            calendario.setTimeInMillis(System.currentTimeMillis() - inicio);
+            lblCronometro.setText(String.format("%02d:%02d", calendario.get(Calendar.MINUTE), calendario.get(Calendar.SECOND)));
+        }
+    }
 }
