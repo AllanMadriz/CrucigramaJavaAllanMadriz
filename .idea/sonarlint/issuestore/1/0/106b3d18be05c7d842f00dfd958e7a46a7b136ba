@@ -1,0 +1,67 @@
+
+u
+java:S1104 "SMake PUNTAJE a static final constant or non-public and provide accessors if needed.(œÉˆûùÿÿÿÿ8ÅõªêÁ.
+E
+java:S2189È""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ú˜ÇÀ.
+K
+java:S1604“"(Make this anonymous inner class a lambda(á’ñûÿÿÿÿ8Ã•ÀšÀ.
+>	java:S131v""Add a default case to this switch.(Ò´Í²8î¼¬óÁ.
+F	java:S108¦")Either remove or fill this block of code.(®ËúÃ8î¼¬óÁ.
+T
+java:S2696"6Make the enclosing method "static" or remove this set.(ô¸ã‚8î¼¬óÁ.
+Q
+java:S1481Ù".Remove this unused "resultado" local variable.(Ë”ıõúÿÿÿÿ8î¼¬óÁ.
+n
+java:S3008"QRename this field "INICIO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òëÔ8úÓšóÁ.
+L
+java:S2140€")Use "java.util.Random.nextInt()" instead.(‰­±şÿÿÿÿ8î¼¬óÁ.
+o
+java:S1104"RMake TIEMPO a static final constant or non-public and provide accessors if needed.(…®Å¯8ö…™óÁ.
+t
+java:S3008 "RRename this field "PUNTAJE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÉˆûùÿÿÿÿ8ÅõªêÁ.
+T
+java:S2696¾"6Make the enclosing method "static" or remove this set.(ÔÌª8î¼¬óÁ.
+K
+java:S1604§"(Make this anonymous inner class a lambda(ŞÆİşÿÿÿÿ8ÍÇíÁ.
+n
+java:S3008"QRename this field "TIEMPO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…®Å¯8ö…™óÁ.
+Y
+java:S2696Ø"6Make the enclosing method "static" or remove this set.(·‚•Üûÿÿÿÿ8î¼¬óÁ.
+u	java:S127˜"XRefactor the code in order to not assign to this loop counter from within the loop body.(„ºó…8Ã•ÀšÀ.
+I
+java:S1444",Make this "public static TIEMPO" field final(…®Å¯8ö…™óÁ.
+K
+java:S1604Á"(Make this anonymous inner class a lambda(é¬ ÿÿÿÿÿ8Ã•ÀšÀ.
+o
+java:S3776""RRefactor this method to reduce its Cognitive Complexity from 99 to the 15 allowed.(ÓšÒÜ8î¼¬óÁ.
+L
+java:S2140†")Use "java.util.Random.nextInt()" instead.(‰­±şÿÿÿÿ8î¼¬óÁ.
+K
+java:S1604ù"(Make this anonymous inner class a lambda(”İËÎüÿÿÿÿ8ú˜ÇÀ.
+T
+java:S2696Ô"6Make the enclosing method "static" or remove this set.(ê²¸Õ8î¼¬óÁ.
+F
+java:S1604à"(Make this anonymous inner class a lambda(íé±Å8Ã•ÀšÀ.
+E
+java:S1604—"(Make this anonymous inner class a lambda(æ=8ú˜ÇÀ.
+b	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(ÓšÒÜ8ñ¤˜›¹.
+\
+java:S4973„"9Use the "equals" method if value comparison was intended.(ŞÌÔìÿÿÿÿÿ8ú˜ÇÀ.
+u	java:S127š"XRefactor the code in order to not assign to this loop counter from within the loop body.(ÔÌ Ä8ÅõªêÁ.
+L
+java:S2140")Use "java.util.Random.nextInt()" instead.(ˆï²Ïøÿÿÿÿ8î¼¬óÁ.
+>
+java:S1170"!Make this final field static too.(ùî„8Í¨…ê¶.
+F
+java:S1604Î"(Make this anonymous inner class a lambda(É±â§8æ”¿ÇÀ.
+L
+java:S2140‡")Use "java.util.Random.nextInt()" instead.(ˆï²Ïøÿÿÿÿ8î¼¬óÁ.
+F
+java:S3010Ø"#Remove this assignment of "TIEMPO".(·‚•Üûÿÿÿÿ8î¼¬óÁ.
+|
+java:S3008"ZRename this field "CONTADOR_AYUDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”à”Åıÿÿÿÿ8ÅõªêÁ.
+l	java:S116"PRename this field "Panel" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïàÕ8”Šçè¶.
+t	java:S116"SRename this field "Vertical" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À¦¶Èıÿÿÿÿ8ªàê¸.
+C	java:S131\""Add a default case to this switch.(‰¡îÿÿÿÿÿ8î¼¬óÁ.
+O
+java:S1444 "-Make this "public static PUNTAJE" field final(œÉˆûùÿÿÿÿ8ÅõªêÁ.

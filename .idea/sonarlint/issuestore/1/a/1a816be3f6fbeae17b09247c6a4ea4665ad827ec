@@ -1,0 +1,23 @@
+
+E
+java:S3010J"#Remove this assignment of "NOMBRE".(ä•³ úÿÿÿÿ8–ŸñÁ.
+_
+java:S1126Z"BReplace this if-then-else statement by a single method invocation.(èíşµ8ÎÄ‡âÁ.
+o
+java:S1104"RMake NOMBRE a static final constant or non-public and provide accessors if needed.(³²İø8–ŸñÁ.
+N
+java:S14810"1Remove this unused "presentacion" local variable.(¡©ä8”ÙÁ.
+J
+java:S16049"(Make this anonymous inner class a lambda(é¬ ÿÿÿÿÿ8ı¶Î‹Á.
+J
+java:S1604,"(Make this anonymous inner class a lambda(Óœ› ıÿÿÿÿ8ô¦ôÀ.
+n
+java:S3008"QRename this field "NOMBRE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³²İø8–ŸñÁ.
+X
+java:S2696J"6Make the enclosing method "static" or remove this set.(ä•³ úÿÿÿÿ8·È›Á.
+J
+java:S1481h"-Remove this unused "registro" local variable.(•äßí8Ğú·ôÀ.
+I
+java:S1444",Make this "public static NOMBRE" field final(³²İø8–ŸñÁ.
+J
+java:S1604E"(Make this anonymous inner class a lambda(·°†×øÿÿÿÿ8˜ñµÁ.

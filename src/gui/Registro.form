@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Registro">
+  <grid id="27dc6" binding="panel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="921" height="514"/>
+    </constraints>
+    <properties>
+      <background color="-15306647"/>
+      <foreground color="-16382200"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="6f4cd" class="javax.swing.JLabel" binding="lblNombre">
+        <constraints/>
+        <properties>
+          <background color="-2694150"/>
+          <font name="Droid Sans Mono" size="18" style="3"/>
+          <foreground color="-1513478"/>
+          <text value="Nombre"/>
+        </properties>
+      </component>
+      <component id="c8a6c" class="javax.swing.JTextField" binding="txtFieldNombre">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="14bec" class="javax.swing.JButton" binding="btnContinuar">
+        <constraints/>
+        <properties>
+          <text value="Continuar"/>
+        </properties>
+      </component>
+      <component id="7d307" class="javax.swing.JButton" binding="btnSalir">
+        <constraints/>
+        <properties>
+          <text value="Salir"/>
+        </properties>
+      </component>
+      <component id="fb750" class="javax.swing.JButton" binding="btnRegistrar">
+        <constraints/>
+        <properties>
+          <text value="Registrar"/>
+        </properties>
+      </component>
+      <component id="144ef" class="javax.swing.JLabel" binding="lblImagen">
+        <constraints/>
+        <properties>
+          <icon value="imagenes/logo_facebook_2.jpg"/>
+          <text value=""/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
