@@ -27,3 +27,5 @@ L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
 L
 src/Avance/Presentacion.java,1\6\16aad572f1f080f6ab8351be703d596fd96221e6
+G
+src/Avance/Usuario.java,1\7\17829101f464632bb5b0a2fa72cb02124f46ce8c

@@ -1,0 +1,41 @@
+
+F
+java:S1604²"(Make this anonymous inner class a lambda(É±â§8æ”¿ÇÀ.
+\
+java:S4973é"9Use the "equals" method if value comparison was intended.(öö•£ıÿÿÿÿ8ú˜ÇÀ.
+L
+java:S2140÷")Use "java.util.Random.nextInt()" instead.(ˆï²Ïøÿÿÿÿ8ú˜ÇÀ.
+J
+java:S1604"(Make this anonymous inner class a lambda(á’ñûÿÿÿÿ8Ã•ÀšÀ.
+\
+java:S4973ô"9Use the "equals" method if value comparison was intended.(ŞÌÔìÿÿÿÿÿ8ú˜ÇÀ.
+E
+java:S1604‡"(Make this anonymous inner class a lambda(æ=8ú˜ÇÀ.
+t	java:S116"SRename this field "Vertical" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À¦¶Èıÿÿÿÿ8ªàê¸.
+K
+java:S1604İ"(Make this anonymous inner class a lambda(”İËÎüÿÿÿÿ8ú˜ÇÀ.
+F
+java:S1604Å"(Make this anonymous inner class a lambda(íé±Å8Ã•ÀšÀ.
+L
+java:S2140ö")Use "java.util.Random.nextInt()" instead.(‰­±şÿÿÿÿ8¿èœ¦À.
+E
+java:S2189¡""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ú˜ÇÀ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ºº¦øÿÿÿÿ
+K
+java:S1604¦"(Make this anonymous inner class a lambda(é¬ ÿÿÿÿÿ8Ã•ÀšÀ.
+W
+java:S4973¸"9Use the "equals" method if value comparison was intended.(°ş¡±8ã—ÑÇÀ.
+>
+java:S1170"!Make this final field static too.(ùî„8Í¨…ê¶.
+>	java:S131c""Add a default case to this switch.(Ò´Í²8Ã•ÀšÀ.
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 97 to the 15 allowed.(ÓšÒÜ8ñ¤˜›¹.
+l	java:S116"PRename this field "Panel" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïàÕ8”Šçè¶.
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÓšÒÜ8ñ¤˜›¹.
+C	java:S131J""Add a default case to this switch.(‰¡îÿÿÿÿÿ8Ã•ÀšÀ.
+u	java:S127†"XRefactor the code in order to not assign to this loop counter from within the loop body.(ÔÌ Ä8Ã•ÀšÀ.
+L
+java:S2140ğ")Use "java.util.Random.nextInt()" instead.(‰­±şÿÿÿÿ8¿èœ¦À.
+u	java:S127„"XRefactor the code in order to not assign to this loop counter from within the loop body.(„ºó…8Ã•ÀšÀ.
+L
+java:S2140ñ")Use "java.util.Random.nextInt()" instead.(ˆï²Ïøÿÿÿÿ8ú˜ÇÀ.
