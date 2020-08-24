@@ -1,10 +1,13 @@
-package Avance;
+package gui;
+
+import logica.Crucigrama;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+
 
 public class Presentacion implements Runnable {
 
@@ -16,46 +19,62 @@ public class Presentacion implements Runnable {
     private JButton btnFinalizar;
     private JButton btnRemover;
     private JLabel lblCronometro;
-    private long inicio = 0;
+    private JButton btnJugar;
+    private JLabel lblUser;
+    private JLabel lblNick;
 
-    final int tamanio = 7;
     JButton[][] elCrucigrama;
+    final int tamanio = 7;
 
-    public static void main(String[] args) throws Exception {
-
-        Presentacion presentacion = new Presentacion();
-        presentacion.init();
-
-    }
+    private static long INICIO = 0;
+    private static int CONTADOR_AYUDAS = 0;
+    public static String TIEMPO = "";
+    public static int PUNTAJE = 0;
+    public static int VALIDACIONES = 0;
 
     public Presentacion() throws Exception {
 
+        //Configuraciones del frame
         JFrame frame = new JFrame("Presentacion");
-        frame.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/snorlax.png")).getImage());
+        frame.setIconImage(new ImageIcon(getClass().getResource("/imagenes/snorlax.png")).getImage());
         frame.setContentPane(Panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(750, 650);
+        frame.setSize(750, 750);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         Panel.setLayout(null);
+
+        //Configuraciones de los botones
         btnSalir.setBounds(525, 360, 150, 50);
         btnValidar.setBounds(525, 290, 150, 50);
         btnAyuda.setBounds(525, 220, 150, 50);
         btnFinalizar.setBounds(525, 150, 150, 50);
         btnRemover.setBounds(525, 70, 150, 50);
         btnRemover.setEnabled(false);
+        btnJugar.setBounds(100, 450, 250, 75);
+        btnFinalizar.setEnabled(false);
+        btnAyuda.setEnabled(false);
+        btnValidar.setEnabled(false);
+
+        //Configuraciones de los labels
         lblCronometro.setBounds(230, 10, 100, 50);
+        lblNick.setBackground(Color.LIGHT_GRAY);
+        lblNick.setOpaque(true);
+        lblNick.setBounds(450, 460, 175, 30);
+        lblNick.setHorizontalAlignment(JLabel.CENTER);
+        lblUser.setBounds(400, 450, 50, 50);
+        lblNick.setText(Registro.NOMBRE);
 
-
+        //Sacar las casillas para formar el crucigrama
         var crucigrama = new Crucigrama();
         var casa = crucigrama.sacarCasillas();
         var matrizResuelta = crucigrama.obtenerMatriz(casa);
-        elCrucigrama = new JButton[tamanio][tamanio];
         var pistaCrucigrama = new Crucigrama();
-        var idk = pistaCrucigrama.sacarPistas();
+        var pistillas = pistaCrucigrama.sacarPistas();
+        elCrucigrama = new JButton[tamanio][tamanio];
 
-
+        //Creacion de los botones del crucigrama
         for (int fila = 0; fila < tamanio; fila++) {
 
             for (int columna = 0; columna < tamanio; columna++) {
@@ -67,7 +86,7 @@ public class Presentacion implements Runnable {
 
                     elCrucigrama[fila][columna].setBackground(Color.BLACK);
                 }
-
+                elCrucigrama[fila][columna].setEnabled(false);
                 int filaBoton = 0;
                 int columnaBoton = 0;
 
@@ -96,6 +115,7 @@ public class Presentacion implements Runnable {
                         break;
 
                 }
+
                 switch (columna) {
 
                     case 0:
@@ -120,6 +140,7 @@ public class Presentacion implements Runnable {
                         filaBoton = 370;
                         break;
                 }
+
                 elCrucigrama[fila][columna].setBorderPainted(true);
                 elCrucigrama[fila][columna].setOpaque(true);
                 elCrucigrama[fila][columna].setBounds(filaBoton, columnaBoton, 50, 50);
@@ -139,11 +160,16 @@ public class Presentacion implements Runnable {
 
                                         if (elCrucigrama[fila][columna].getText().trim().equals("")) {
 
-                                            char letra = JOptionPane.showInputDialog("Digite una letra:").toUpperCase().charAt(0);
-                                            elCrucigrama[fila][columna].setText(letra + "");
+                                            try {
+                                                char letra = JOptionPane.showInputDialog("Digite una letra:").toUpperCase().charAt(0);
+                                                elCrucigrama[fila][columna].setText(letra + "");
+
+                                            } catch (Exception exception) {
+
+                                            }
+
                                         }
                                     } else if (elCrucigrama[fila][columna].getBackground() == Color.GREEN || elCrucigrama[fila][columna].getBackground() == Color.RED) {
-
                                         elCrucigrama[fila][columna].setText("");
                                         elCrucigrama[fila][columna].setBackground(Color.WHITE);
                                     }
@@ -157,12 +183,14 @@ public class Presentacion implements Runnable {
             }
         }
 
-        idk.forEach(pista -> Vertical.setText(Vertical.getText() + pista.toString()));
+        //Creacion de la textArea donde se muestran las pistas
+        pistillas.forEach(pista -> Vertical.setText(Vertical.getText() + pista.toString()));
         Vertical.setBackground(Color.LIGHT_GRAY);
         Vertical.setVisible(true);
         Vertical.setOpaque(true);
-        Vertical.setBounds(40, 450, 650, 125);
+        Vertical.setBounds(40, 550, 650, 125);
 
+        //Acciones a realizar en el boton salir
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -175,25 +203,25 @@ public class Presentacion implements Runnable {
             }
         });
 
+        //Acciones a realizar en el boton finalizar
         btnFinalizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int puntos = 0;
                 for (int i = 0; i < tamanio; i++) {
                     for (int j = 0; j < tamanio; j++) {
-                        if (elCrucigrama[i][j].getText()!= "" && elCrucigrama[i][j].getBackground()==Color.GREEN){
-                            puntos++;
+                        if (elCrucigrama[i][j].getText().equals(matrizResuelta[i][j])) {
+                            PUNTAJE++;
                         }
                     }
                 }
-                Integer finalizar = JOptionPane.showConfirmDialog(null, "¿Juego listo?", "", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                if (finalizar == JOptionPane.YES_OPTION) {
-                    JOptionPane.showMessageDialog(null, "Juan "+puntos);
+                TIEMPO = lblCronometro.getText();
+                Resultado resultado = new Resultado();
+                frame.dispose();
 
-                }
             }
         });
 
+        //Acciones a realizar en el boton validar
         btnValidar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -214,28 +242,27 @@ public class Presentacion implements Runnable {
                         }
                     }
                 }
+                if (VALIDACIONES < 2) {
+                    btnValidar.setEnabled(true);
+                    VALIDACIONES++;
+                } else {
+                    btnRemover.setEnabled(false);
+                    btnValidar.setEnabled(false);
+                    JOptionPane.showMessageDialog(null, "No mas validaciones");
+                }
+
                 btnRemover.setEnabled(true);
+                VALIDACIONES++;
             }
         });
 
+        //Acciones a realizar en el boton ayuda
         btnAyuda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 int filaRandom = 0;
                 int columnaRandom = 0;
-                int ayudas = 0;
-
-                for (int fila = 0; fila < 7; fila++) {
-
-                    for (int columna = 0; columna < 7; columna++) {
-
-                        if (elCrucigrama[fila][columna].getText() != "") {
-
-                            ayudas++;
-                        }
-                    }
-                }
 
                 filaRandom = (int) (Math.random() * 7);
                 columnaRandom = (int) (Math.random() * 7);
@@ -249,17 +276,16 @@ public class Presentacion implements Runnable {
                 elCrucigrama[filaRandom][columnaRandom].setText(matrizResuelta[filaRandom][columnaRandom]);
 
 
-                if (ayudas < 2) {
-
+                if (CONTADOR_AYUDAS < 2) {
                     btnAyuda.setEnabled(true);
+                    CONTADOR_AYUDAS++;
                 } else {
                     JOptionPane.showMessageDialog(null, "Ups intentos acabos!!");
                 }
-
             }
-
         });
 
+        //Acciones a realizar en el boton remover
         btnRemover.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -272,23 +298,49 @@ public class Presentacion implements Runnable {
                     }
                 }
                 btnRemover.setEnabled(false);
+
             }
         });
 
+        //Acciones a realizar en el boton jugar
+        btnJugar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                btnFinalizar.setEnabled(true);
+                btnAyuda.setEnabled(true);
+                btnValidar.setEnabled(true);
+                for (int i = 0; i < tamanio; i++) {
+
+                    for (int j = 0; j < tamanio; j++) {
+
+                        elCrucigrama[i][j].setEnabled(true);
+                    }
+                }
+                btnJugar.setEnabled(false);
+                init();
+            }
+        });
     }
 
     public void init() {
-        inicio = System.currentTimeMillis();
+
+        INICIO = System.currentTimeMillis();
         Thread hilo = new Thread(this);
         hilo.start();
+
     }
 
     @Override
     public void run() {
+
         Calendar calendario = Calendar.getInstance();
         while (true) {
-            calendario.setTimeInMillis(System.currentTimeMillis() - inicio);
+            calendario.setTimeInMillis(System.currentTimeMillis() - INICIO);
             lblCronometro.setText(String.format("%02d:%02d", calendario.get(Calendar.MINUTE), calendario.get(Calendar.SECOND)));
+
         }
     }
+
 }
