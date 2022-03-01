@@ -1,0 +1,149 @@
+[
+  {
+    "fila": 0, "columna": 0, "activada": false, "letra": ""
+  },
+  {
+    "fila": 0, "columna": 1, "activada": false, "letra": ""
+  },
+  {
+    "fila": 0, "columna": 2, "activada": false, "letra": ""
+  },
+  {
+    "fila": 0, "columna": 3, "activada": false, "letra": ""
+  },
+  {
+    "fila": 0, "columna": 4, "activada": true, "letra": "V"
+  },
+  {
+    "fila": 0, "columna": 5, "activada": false, "letra": ""
+  },
+  {
+    "fila": 0, "columna": 6, "activada": true, "letra": "P"
+  },
+  {
+    "fila": 1, "columna": 0, "activada": true, "letra": "P"
+  },
+  {
+    "fila": 1, "columna": 1, "activada": false, "letra": ""
+  },
+  {
+    "fila": 1, "columna": 2, "activada": false, "letra": ""
+  },
+  {
+    "fila": 1, "columna": 3, "activada": true, "letra": "H"
+  },
+  {
+    "fila": 1, "columna": 4, "activada": true, "letra": "I"
+  },
+  {
+    "fila": 1, "columna": 5, "activada": true, "letra": "J"
+  },
+  {
+    "fila": 1, "columna": 6, "activada": true, "letra": "A"
+  },
+  {
+    "fila": 2, "columna": 0, "activada": true, "letra": "O"
+  },
+  {
+    "fila": 2, "columna": 1, "activada": false, "letra": ""
+  },
+  {
+    "fila": 2, "columna": 2, "activada": false, "letra": ""
+  },
+  {
+    "fila": 2, "columna": 3, "activada": false, "letra": ""
+  },
+  {
+    "fila": 2, "columna": 4, "activada": true, "letra": "S"
+  },
+  {
+    "fila": 2, "columna": 5,"activada": false, "letra": ""
+  },
+  {
+    "fila": 2, "columna": 6, "activada": true, "letra": "Z"
+  },
+  {
+    "fila": 3, "columna": 0, "activada": true, "letra": "B"
+  },
+  {
+    "fila": 3, "columna": 1, "activada": true, "letra": "O"
+  },
+  {
+    "fila": 3, "columna": 2, "activada": true, "letra": "N"
+  },
+  {
+    "fila": 3, "columna": 3, "activada": true, "letra": "I"
+  },
+  {
+    "fila": 3, "columna": 4, "activada": true, "letra": "T"
+  },
+  {
+    "fila": 3, "columna": 5, "activada": true, "letra": "O"
+  },
+  {
+    "fila": 3, "columna": 6, "activada": false, "letra": ""
+  },
+  {
+    "fila": 4, "columna": 0, "activada": true, "letra": "R"
+  },
+  {
+    "fila": 4, "columna": 1, "activada": false, "letra": ""
+  },
+  {
+    "fila": 4, "columna": 2, "activada": true, "letra": "U"
+  },
+  {
+    "fila": 4, "columna": 3, "activada": false, "letra": ""
+  },
+  {
+    "fila": 4, "columna": 4, "activada": true, "letra": "A"
+  },
+  {
+    "fila": 4, "columna": 5, "activada": false, "letra": ""
+  },
+  {
+    "fila": 4, "columna": 6, "activada": false, "letra": ""
+  },
+  {
+    "fila": 5, "columna": 0, "activada": true, "letra": "E"
+  },
+  {
+    "fila": 5, "columna": 1,"activada": false, "letra": ""
+  },
+  {
+    "fila": 5, "columna": 2, "activada": true, "letra": "B"
+  },
+  {
+    "fila": 5, "columna": 3, "activada": false, "letra": ""
+  },
+  {
+    "fila": 5, "columna": 4, "activada": false, "letra": ""
+  },
+  {
+    "fila": 5, "columna": 5, "activada": false, "letra": ""
+  },
+  {
+    "fila": 5, "columna": 6, "activada": false, "letra": ""
+  },
+  {
+    "fila": 6, "columna": 0, "activada": false, "letra": ""
+  },
+  {
+    "fila": 6, "columna": 1, "activada": true, "letra": "V"
+  },
+  {
+    "fila": 6, "columna": 2, "activada": true, "letra": "E"
+  },
+  {
+    "fila": 6, "columna": 3, "activada": true, "letra": "R"
+  },
+  {
+    "fila": 6, "columna": 4, "activada": true, "letra": "D"
+  },
+  {
+    "fila": 6, "columna": 5, "activada": true, "letra": "A"
+  },
+  {
+    "fila": 6, "columna": 6, "activada": true, "letra": "D"
+  }
+]
